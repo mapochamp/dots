@@ -1,0 +1,31 @@
+# Override terminal default
+comand term "alacritty"
+
+# Set default Xft(3) font
+fontname "sans-serif:pixelsize=14:bold"
+
+# Turn on sticky-group mode
+sticky yes
+
+# Any entry here is shown in the application menu
+command firefox		firefox
+command htop		"alacritty -e htop"
+command ytop		"alacritty -e ytop"
+command audio		"pavucontrol"
+command shutdown	"sudo systemctl poweroff"
+command restart		"sudo systemctl reboot"
+command suspend		"sudo systemctl suspend"
+
+# Autogroup definitions
+
+# Ignore programs by that name by not drawing borders around them.
+
+# Key bindings
+bind-key M-Return	terminal
+bind-key M-space	"rofi -show run"
+bind-key M-n		window-hide
+bind-key M-w		window-close
+
+# Mouse bindings
+bind-mouse M-2		window-lower
+bind-mouse M-3		window-resize
