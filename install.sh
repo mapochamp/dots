@@ -34,10 +34,15 @@ vim -E +PlugInstall +qall
 vim -E +"mkspell ~/.dotfiles/vim/spell/en.utf-8.add" +qall
 source ./fonts/install
 
-stow --dotfiles cwm bash git polybar ranger\
-	tmux vim xinitrc xprofile
+stow --dotfiles cwm bash git tmux vim xinitrc xprofile
+
 
 cp polybar/launch.sh ~/launch.sh
+cp polybar/dot-config/polybar/config.ini ~/.config/polybar/config.ini
+
+cp ranger/dot-config/ranger/rc.conf ~/.config/ranger/rc.conf
+
+cp alacritty/dot-config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 report_errors
 
