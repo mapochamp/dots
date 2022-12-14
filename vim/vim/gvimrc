@@ -1,0 +1,12 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FILENAME: gvimrc
+" AUTHOR: James Shackleford
+" UPDATED: 07.10.2015
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" disable toolbar
+set guioptions-=T
+
+" 90x50 gvim sessions
+set columns=90
+set lines=50

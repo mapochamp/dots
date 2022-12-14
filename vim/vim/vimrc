@@ -1,0 +1,43 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FILENAME: vimrc
+" AUTHOR: James Shackleford
+" UPDATED: 07.10.2015
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible
+
+" VIM-PLUG
+""""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-commentary'
+"Plug 'vim-scripts/Conque-GDB'
+Plug 'tshack/vim-fontsize'
+Plug 'tpope/vim-fugitive' | Plug 'gregsexton/gitv'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer' }
+Plug 'lervag/vimtex'
+Plug 'kergoth/vim-hilinks', { 'on': ['HLT', 'HLTX'] }
+Plug 'SirVer/ultisnips'
+Plug 'sirtaj/vim-openscad'
+Plug 'junegunn/limelight.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'srcery-colors/srcery-vim'
+call plug#end()
+
+set number
+
+colorscheme srcery
+let g:indent_guides_enable_on_vim_startup = 1
+
+" I like this more than modifying runtimepath.  Easy to disable
+" by changing the extension from .vim to .disable (for example)
+for vimfile in split(glob('~/.dotfiles/vim/vimrc.d/*.vim'), '\n')
+    exe 'source' vimfile
+endfor

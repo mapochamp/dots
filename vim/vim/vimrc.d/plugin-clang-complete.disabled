@@ -1,0 +1,16 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Script: clang_complete
+"   git clone git://github.com/Rip-Rip/clang_complete.git
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use libclang.so instead of clang executable
+let g:clang_use_library=1
+" path to libclang.so    [ broken - edit cindex.py directly ]
+let g_clang_library_path='/home/tshack/lib/'
+" automatic suggestion (slow).  manually suggest with ^X^U (or supertab)
+let g:clang_complete_auto=0
+" [popup menu] non-selected item background and text color
+highlight Pmenu guibg=darkslategray
+" [popup menu] selected item background and text color
+highlight PmenuSel guibg=red guifg=white gui=bold
+" [popup menu] set height in # of lines
+set pumheight=15

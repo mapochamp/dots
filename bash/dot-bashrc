@@ -2,5 +2,6 @@ source /etc/profile
 . "$HOME/.cargo/env"
 
 export EDITOR=vim
+export PATH="${PATH}:/home/chunchunmaru/.local/bin"
 
 alias ls="ls --color=auto -FHh"

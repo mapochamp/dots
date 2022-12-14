@@ -1,0 +1,69 @@
+#### MISC STUFF ######################################################
+
+snippet gpl
+	/*
+	 * This program is free software; you can redistribute it and/or modify
+	 * it under the terms of the GNU General Public License as published by
+	 * the Free Software Foundation; either version 2 of the License, or
+	 * (at your option) any later version.
+	 *
+	 * This program is distributed in the hope that it will be useful,
+	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	 * GNU General Public License for more details.
+	 *
+	 * You should have received a copy of the GNU General Public License
+	 * along with this program; if not, see <http://www.gnu.org/licenses/>.
+	 *
+	 * Copyright (C) `g:snips_author` <`g:snips_email`>, `strftime("%Y")`
+	 */
+
+	${0}
+
+snippet .
+	[${1}]
+
+
+#### KERNEL MODULE STUFF #############################################
+
+snippet kernel_module linux kernel module skeleton
+	#include <linux/module.h>
+
+	static int __init ${1:foo}_init(void)
+	{
+		int ret;
+		${0}
+
+		return ret;
+	}
+
+	static void __exit $1_exit(void)
+	{
+
+	}
+
+	module_init($1_init);
+	module_exit($1_exit);
+
+	MODULE_LICENSE("GPL");
+	MODULE_AUTHOR("`g:snips_author` <`g:snips_email`>");
+	MODULE_DESCRIPTION("${2}");
+
+snippet kernel_fops kernel fops skeleton
+	static ssize_t ${1:foo}_read(struct file *file, __user char *buf,
+							size_t size, loff_t *offset)
+	{
+		return /* don't forget me */
+	}
+
+	static ssize_t $1_write(struct file *file, __user const char *buf,
+						size_t size, loff_t *offset)
+	{
+		return /* don't forget me */
+	}
+
+	static const struct file_operations fops = {
+		.owner = THIS_MODULE,
+		.read = $1_read,
+		.write = $1_write,
+	};

@@ -1,0 +1,145 @@
+### PREAMBLE LEVEL ###################################################
+
+snippet preamble standard preamble
+	\documentclass[10pt,letterpaper]{article}
+
+	\usepackage[utf8]{inputenc}
+	\usepackage{graphics, graphicx, cite, fancybox}
+	\usepackage{amsfonts, amssymb, amsmath, bold-extra}
+	\usepackage{wrapfig, subfigure, float}
+	\usepackage[letterpaper, left=1in, right=1in, top=1in, bottom=1in]{geometry}
+	\usepackage[font=small, labelfont=bf]{caption}
+	\usepackage{setspace, multirow}
+	\usepackage{hyperref, url}
+	\usepackage{color, minted}
+	\usepackage[compact]{titlesec}
+	\titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+	\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+	\titlespacing{\subsubsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+	%: Don't indent paragraphs
+	\setlength{\parindent}{0pt}
+	%: But do space them out a slight bit
+	\setlength{\parskip}{0.7em}
+	%: Change "Figure" to "Fig." in captions
+	\renewcommand{\figurename}{Fig.}
+
+	\hypersetup{%
+		pdfsubject={${1:LaTeX Document}},
+		colorlinks=true,   % false: boxed links; true: colored links
+		linkcolor=blue,    % color of internal links
+		citecolor=blue,    % color of links to bibliography
+		urlcolor=blue,     % color of external links
+		unicode=false      % non-Latin characters in Acrobat's bookmarks
+	}
+
+	${0}
+
+
+### DOCUMENT LEVEL ###################################################
+
+# \begin{}...\end{}
+snippet begin \begin{} ... \end{}
+	\begin{${1:env}}
+		${0}
+	\end{$1}
+
+# Section
+snippet sec \section
+	\section{${1:section name}}
+	\label{sec:${2:$1}}
+	${0}
+
+# Sub Section
+snippet sub \subsection
+	\subsection{${1:subsection name}}
+	\label{sub:${2:$1}}
+	${0}
+
+# Sub Sub Section
+snippet subsub \subsubsection
+	\subsubsection{${1:subsubsection name}}
+	\label{ssub:${2:$1}}
+	${0}
+
+
+### REFERENCING ######################################################
+
+snippet figure reference to a figure
+	${1:Figure}~\ref{fig:${2}} ${0}
+
+snippet section reference to a section
+	${1:Section}~\ref{sec:${2}} ${0}
+
+snippet table reference to a table
+	${1:Table}~\ref{tab:${2}} ${0}
+
+
+### FIGURE STUFF #####################################################
+snippet fig figure [1 image]
+	\begin{figure}
+	\begin{center}
+		\includegraphics[width=${1:0.95}\textwidth]{fig/${2}}
+	\end{center}
+	\caption{${3}}
+	\label{fig:${4:$2}}
+	\end{figure}
+	${0}
+
+snippet fig wrapfigure [1 image]
+	\begin{wrapfigure}{r}{${1:0.33}\textwidth}
+	\vspace{0pt}
+		\includegraphics[width=$1\textwidth]{fig/${2}}
+	\caption{${3}}
+	\vspace{0pt}
+	\label{fig:${4:$2}}
+	\end{wrapfigure}
+	${0}
+
+snippet fig wrapfigure->tabular [2 vert img]
+	\begin{wrapfigure}{r}{${1:0.33}\textwidth}
+	\vspace{0pt}
+	\begin{tabular}{@{}c@{}}
+		\includegraphics[width=$1\textwidth]{fig/${2}} \\\\
+		\includegraphics[width=$1\textwidth]{fig/${3}}
+	\end{tabular}
+	\caption{(top)~${4} (bottom)~${5}}
+	\vspace{0pt}
+	\label{fig:${6}}
+	\end{wrapfigure}
+	${0}
+
+snippet fig figure->subfigure [2 horiz img]
+	\begin{figure}[!t]
+		\centering
+		\subfigure[${1:subcaption}]{%
+			\includegraphics[width=0.40\textwidth]{fig/${2}}
+			\label{fig:${3:$2}}
+		}
+		\subfigure[${4:subcaption}]{%
+			\includegraphics[width=0.40\textwidth]{fig/${5}}
+			\label{fig:${6:$5}}
+		}
+		\caption{%
+		\subref{fig:$3}~${7:left_caption}
+		\subref{fig:$6}~${8:right_caption}}
+	\label{fig:${9}}
+	\end{figure}
+	${0}
+
+
+### CODE LISTINGS ####################################################
+snippet code minted code environment
+	\begin{minted}[bgcolor=lightgray,linenos]{${1:language}}
+	${0}
+	\end{minted}
+
+
+### BIBLIOGRAPHY #####################################################
+snippet bib init bibliography
+	%: Bibliography
+	\pagebreak
+	\bibliographystyle{${1:unsrt}}
+	\pagestyle{empty}
+	\bibliography{${2:references}}
+	${0}

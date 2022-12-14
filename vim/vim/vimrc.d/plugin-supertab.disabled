@@ -1,0 +1,6 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Script: SuperTab
+"   git clone git://github.com/ervandew/supertab.git
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
