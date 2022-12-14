@@ -24,7 +24,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer' }
 Plug 'lervag/vimtex'
 Plug 'kergoth/vim-hilinks', { 'on': ['HLT', 'HLTX'] }
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'sirtaj/vim-openscad'
 Plug 'junegunn/limelight.vim'
 Plug 'pangloss/vim-javascript'
