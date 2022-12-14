@@ -29,7 +29,7 @@ function have_sudo {
 }
 
 function have_pac {
-    if which pacman-get > /dev/null; then
+    if which pacman > /dev/null; then
         return 0
     else
         return 1
