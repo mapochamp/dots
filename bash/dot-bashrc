@@ -5,3 +5,12 @@ export EDITOR=vim
 export PATH="${PATH}:/home/chunchunmaru/.local/bin"
 
 alias ls="ls --color=auto -FHh"
+alias smaug="docker run -it --rm --mount source=smaug-workspace,target=/workspace xyzsam/smaug:latest"
+
+ALADDIN_HOME=~/masters/workspace/gem5-aladdin/src/aladdin
+TRACER_HOME=~/masters/workspace/LLVM-Tracer
+LLVM_HOME=/usr/local
+BOOST_ROOT=/usr/include
+SMAUG_HOME=~/masters/workspace/smaug
+PROTOC=/usr/local/bin/protoc
+PYTHONPATH="${SMAUG_HOME}/build:${PYTHONPATH}"
