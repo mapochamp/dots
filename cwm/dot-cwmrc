@@ -9,6 +9,8 @@ sticky yes
 
 # Any entry here is shown in the application menu
 command firefox		firefox
+command clock		"alacritty -e tclock"
+command vpn		"alacritty -e /opt/cisco/anyconnect/bin/vpnui"
 command htop		"alacritty -e htop"
 command ytop		"alacritty -e ytop"
 command audio		"pavucontrol"

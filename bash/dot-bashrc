@@ -5,7 +5,10 @@ export EDITOR=vim
 export PATH="${PATH}:/home/chunchunmaru/.local/bin"
 
 alias ls="ls --color=auto -FHh"
+alias push="git push"
+alias add="git add -A"
 alias smaug="docker run -it --rm --mount source=smaug-workspace,target=/workspace xyzsam/smaug:latest"
+alias spm="docker run -it -w /workspace -v "/home/chunchunmaru/masters/spm:/workspace" spm"
 
 ALADDIN_HOME=~/masters/workspace/gem5-aladdin/src/aladdin
 TRACER_HOME=~/masters/workspace/LLVM-Tracer
