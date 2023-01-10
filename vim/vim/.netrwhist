@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/chunchunmaru/lambda-mod-zsh-theme'
+let g:netrw_dirhist_4='/home/chunchunmaru'
+let g:netrw_dirhist_3='/home/chunchunmaru/node_modules'
+let g:netrw_dirhist_2='/home/chunchunmaru'
+let g:netrw_dirhist_1='/home/chunchunmaru/masters/spm/smaug/smaug/operators'
+let g:netrw_dirhist_0='/home/chunchunmaru/masters/spm/smaug/smaug'
+let g:netrw_dirhist_9='/home/chunchunmaru/masters/spm/smaug/smaug/core'
+let g:netrw_dirhist_8='/home/chunchunmaru/masters/spm/smaug/make'
+let g:netrw_dirhist_7='/home/chunchunmaru/masters/spm/smaug'
+let g:netrw_dirhist_6='/home/chunchunmaru/masters/spm/smaug/smaug'
