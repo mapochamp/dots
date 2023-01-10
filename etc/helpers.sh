@@ -63,7 +63,7 @@ function install_package {
         if [ can_install ]; then
             sudo pacman -S $PKG
             if [ $? -ne 0 ]; then
-		sudo yay -S $PKG
+		yay -S $PKG
             	if [ $? -ne 0 ]; then
                 log_error "Failed to install package: $PKG"
 		fi

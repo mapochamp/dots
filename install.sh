@@ -23,22 +23,32 @@ install_package python-flake8-black
 install_package nodejs
 install_package jdk-openjdk
 install_package jre-openjdk
+install_package stow
+install_package rofi
+install_package zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s /usr/bin/zsh
+yay -S noto-fonts-emoji-apple
+clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# TODO: fix jdk installation
+# TODO: install zsh and zsh config
+# TODO: add tmux themes dir to repo
+
+stow --dotfiles cwm bash git tmux vim xinitrc xprofile
+rm -rf ~/.vim
+cp -r ./vim/vim ~/.vim #this is bad since it doesn't symlink the file
+
+tmux source ~/.tmux.conf
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-python3 ~/.vim/plugged/YouCompleteMe/install.py
 
 # download & install plugins
 vim -E +PlugInstall +qall
+python3 ~/.vim/plugged/YouCompleteMe/install.py
 
 # build custom spellcheck dictionary
 vim -E +"mkspell ~/.dotfiles/vim/spell/en.utf-8.add" +qall
 source ./fonts/install
-
-stow --dotfiles cwm bash git tmux vim xinitrc xprofile
-
-
-cp polybar/launch.sh ~/launch.sh
-cp polybar/dot-config/polybar/config.ini ~/.config/polybar/config.ini
 
 cp ranger/dot-config/ranger/rc.conf ~/.config/ranger/rc.conf
 
